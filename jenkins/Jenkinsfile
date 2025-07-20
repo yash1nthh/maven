@@ -13,11 +13,12 @@ stages{
     {
         steps {
             bat 'mvn clean package'
+            bat 'dir target'
         }
 
         post {
         success {
-            archiveArtifacts artifacts: '**/target/*.war'
+            archiveArtifacts artifacts: '**/target/*.jar'
                  }
             }
 
